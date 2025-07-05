@@ -1,0 +1,158 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 200 20% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 20% 10%;
+
+    --primary: 200 100% 36%;  /* blue-500 */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 174 58% 39%;  /* green-500 */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 39 80% 67%;  /* accent-yellow-500 */
+    --accent-foreground: 200 20% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 200 100% 36%;
+
+    --radius: 1rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 200 20% 10%;
+    --sidebar-primary: 200 100% 36%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 174 58% 39%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 214.3 31.8% 91.4%;
+    --sidebar-ring: 200 100% 36%;
+  }
+
+  .dark {
+    --background: 200 50% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 200 60% 15%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 200 60% 15%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 200 100% 36%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 174 58% 39%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 200 50% 25%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 39 80% 67%;
+    --accent-foreground: 200 20% 10%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 200 50% 20%;
+    --input: 200 50% 20%;
+    --ring: 200 100% 36%;
+
+    --sidebar-background: 200 60% 15%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 200 100% 36%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 174 58% 39%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 200 50% 20%;
+    --sidebar-ring: 200 100% 36%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    background-image: 
+      radial-gradient(at 20% 25%, rgba(42, 157, 143, 0.05) 0px, transparent 50%),
+      radial-gradient(at 80% 75%, rgba(0, 119, 182, 0.05) 0px, transparent 50%);
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl font-bold md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl font-semibold md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl font-semibold md:text-3xl;
+  }
+}
+
+@layer components {
+  .glassmorphic {
+    @apply bg-white/70 dark:bg-black/30 backdrop-blur-lg border border-white/20 dark:border-white/10 shadow-glass;
+  }
+  
+  .neomorphic {
+    @apply bg-background shadow-neo border-none;
+  }
+  
+  .button-transition {
+    @apply transition-all duration-300 ease-out;
+  }
+  
+  .page-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-[calc(100vh-9rem)];
+  }
+  
+  .section-padding {
+    @apply py-12 md:py-20;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg bg-background border border-input focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .shimmer-bg {
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite linear;
+  }
+}
+
+/* Custom font imports */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
